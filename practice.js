@@ -5,6 +5,12 @@ class HashMap {
     this._capacity = initialCapacity;
     this._deleted = 0;
   }
+  
+
+  has(key){
+    let slot=this._findSlot(key);
+    return this._hashTable[slot] !== undefined;
+  }
 
   get(key) {
     const index = this._findSlot(key);
